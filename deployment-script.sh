@@ -13,13 +13,17 @@ sudo chmod +x /usr/local/bin/docker-compose
 sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
 
 # git
-sudo yum install git
+sudo yum -y install git
 
 # clone repo
-git clone https://github.com/rafaelmarques7/multi-docker-hello.git
+cd /home/ec2-user
+sudo git clone https://github.com/rafaelmarques7/multi-docker-hello.git
 
 # cd to repo
 cd multi-docker-hello/
 
+# create /etc/nginx directory if not exists
+sudo mkdir -p /etc/nginx
+
 # run app
-sudo docker-compsoe up
+sudo docker-compose up
