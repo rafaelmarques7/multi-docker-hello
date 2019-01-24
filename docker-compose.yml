@@ -10,6 +10,8 @@ services:
       image: rafaelmarques7/hello-node:latest
   backend5:
       image: rafaelmarques7/hello-node:latest
+  backend6:
+      image: rafaelmarques7/hello-node:latest
   loadbalancer:
       image: nginx:latest
       links:
@@ -18,6 +20,7 @@ services:
           - backend3
           - backend4
           - backend5
+          - backend6
       ports:
         - '8080:8080'
       volumes: 
